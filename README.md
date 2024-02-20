@@ -49,7 +49,10 @@ be done trivially, I believe.
 My notice.
 Functional with Ubuntu 22.04.3 LTS (Jammy Jellyfish) and Homeassistant core-2022.12.6.
 Due to Homeassistant version could be necessary to change the SQL query :-)
-My query was SELECT m.entity_id, s.state, a.shared_attrs as attributes, 5 as entity_type, FROM_UNIXTIME(s.last_updated_ts) as time_fired FROM `states` as s left JOIN `states_meta` as m ON m.metadata_id=s.metadata_id left join `state_attributes` as a on a.attributes_id=s.attributes_id
+My query was:
+SELECT m.entity_id, s.state, a.shared_attrs as attributes, 5 as entity_type, FROM_UNIXTIME(s.last_updated_ts) as time_fired FROM `states` as s
+  left JOIN `states_meta` as m ON m.metadata_id=s.metadata_id
+  left join `state_attributes` as a on a.attributes_id=s.attributes_id
 
 In order to not duplicate logic, the script uses the InfluxDB component of
 Home Assistant directly.
