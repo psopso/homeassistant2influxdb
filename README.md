@@ -46,6 +46,9 @@ be done trivially, I believe.
 
 ## Setup
 
+My notice.
+Functional with Ubuntu 22.04.3 LTS (Jammy Jellyfish) and Homeassistant core-2022.12.6
+
 In order to not duplicate logic, the script uses the InfluxDB component of
 Home Assistant directly.
 
